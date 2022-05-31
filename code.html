@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontendle</title>
+		<script
+			src="https://kit.fontawesome.com/888d2de2e7.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/code.css" />
+	</head>
+	<body>
+		<header>
+					<div id="navlist">
+						
+						<a id="aboutSVG" href="about.html">About</a>
+						
+						<div class="title">
+							<a href="index.html">Frontendle</a>
+						</div>
+						<div class="navlist-right">
+							<a id="howTo" href="howto.html">
+								<i class="fa-solid fa-circle-question"></i>
+							</a>
+							<a id="codeSVG" href="code.html">
+							<i class="fa-regular fa-file-code"></i>
+						</a>
+						</div>
+					</div>
+				</header>
+		<div class="content">
+			<div class="newHeader">
+				<h1>HOW IT WAS DEVELOPED</h1>
+			</div>
+			<p>This page goes into how the project was developed and the process I went through. Click the link to my repository below and download the code to follow along.</p>
+      <br />
+      <a href="https://github.com/NickNielsen23128/NickNielsen23128.github.io">
+        <i class="fa-brands fa-github"></i>
+      </a>
+  
+      <br>
+      <hr>
+      <br />
+      <p>To start off the design procces I drew out all of the pages onto a peice of paper in order to visualize the layout. As you can see, the real website ended up being vastly different than the mock up.</p>
+      <img id="paperPNG" src="/img/paper.png" />
+      <hr>
+      <br />
+      <p>I edit all of my code using Visual Studio code on a Mac. In order to veiw my projects and edit in real time, I use the extension live server for Visual Studio code.</p>
+      <br>
+      <hr>
+      <br>
+      <p>The first step that I took when designing to project was making the JS. I will be mainly going over the development of the JS in this page. To start, I needed a way to randomize word selections of different lengths. I added an external JS script with an array filled with my word list. I imported this list and designed a random word selector from this array. Below is a picture using the console to print a randomly chosen word.</p>
+      <br>
+      <img src="/img/random.png" />
+      <br>
+      <hr> 
+      <br>
+      <p>The next part of the development was the creation of the frontendle boxes where the letters would go. I tried two different approaches. The first approach was using a for loop to create thirty different divs using the createElement() function and by assigning each a unique id one through thirty. This way I could easily navigate by using the function getElementById(i) to iterate through the divs.</p>
+      <br>
+      <hr>
+      <br>
+      <p>The second approach entailed creating divs rows and div boxes insie each row using the appendChild() function. I decided to use this as I beleived it would make it easier to make rows of different lengths as well as to have the abilit to compare individual rows to the correct string. Here is an example of the div classes set up.</p>
+      <br>
+      <img src="/img/rowsandcolumns.png" />
+      <br>
+      <hr>
+      <br>
+      <p>A little CSS to each of the divs as well as aligning the boxes in colums with flexbox made the process a lot easier to visualize.</p>
+      <br>
+      <img src="/img/Screen Shot 2022-05-30 at 11.06.56 PM.png" />
+      <br>
+      <hr>
+      <br>
+      <p>Next I used a event listener with the paramater keyup in order to parse the key function into a string and insert each string into each respective box using the textContent() function.</p>
+      <br>
+      <img src="/img/Screen Shot 2022-05-30 at 11.09.23 PM.png" />
+      <br>
+      <img src="/img/Screen Shot 2022-05-30 at 11.12.50 PM.png" />
+      <br>
+      <hr>
+      <br>
+      <p>The final major step of the JS was getting the boxes to change colors based on if the string was correct. I changed both strings into arrays where I used the indexOf() function to determine what color the box should be. I changed the color to green if the indexOf() was the same for the correct guess and the user guess. If the indexOf() returned a negative number, the letter was not in the word at all and I returned a grey box. If the indexOf() returned a positive number the letter was not in the correct place and I returned a yellow box.</p>
+      <br>
+      <img src="/img/Screen Shot 2022-05-30 at 11.16.30 PM.png" />
+      <br>
+      <hr>
+      <br>
+      <p>Not as important but equally as intresting is adding animations. I needed each box to animate at a diffrent time in order which proved to be a challenge. I ended up using the setTimeout(() => {}) function in order to set a delay. I then used a for loop inside the function to change the length of the delay each time. By using the website Animista and the function ClassList.add() I was able to set animations to each individual box.</p>
+      <br>
+      <hr>
+      <br>
+      <p>After choosing a color pallete, styling the website, and making a how to play page I decided to publish it to GitHub and use the website feature to share it with my friends. I beleive that in this modern age, the ability to share projects and colabarate is important. Below I am adding the tutorial I used to add my website to GitHub.</p>
+      <br>
+      <iframe width="700" height="315" src="https://www.youtube.com/embed/QyFcl_Fba-k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br>
+      <hr>
+      <br>
+      <p>Thank you for reading about the process of how I developed this simple JS game. Download the script linked at the top and try it out for yourself!</p>
+    </div>
+	</body>
+</html>
